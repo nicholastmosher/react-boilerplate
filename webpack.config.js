@@ -21,6 +21,14 @@ let config = {
           options: { presets: [ 'es2015', 'react', 'stage-2' ]},
         }],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
     ]
   },
   plugins: [ ],
