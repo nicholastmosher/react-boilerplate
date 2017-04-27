@@ -1,5 +1,3 @@
-const AppActionTypes = {
+export default {
   SAY_HELLO: 'SAY_HELLO',
 };
-
-export default AppActionTypes;
