@@ -1,8 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import AppContainer from './containers/AppContainer';
 
 render(
-  <AppContainer/>,
+  <HashRouter>
+    <Route path="/" component={AppContainer} />
+  </HashRouter>,
   document.getElementById('root')
 );
