@@ -1,0 +1,11 @@
+.todo-done {
+  background-color: $input-bg-disabled;
+  text-decoration: line-through;
+  transition-property: background-color, line-through;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.todo-input {
+  margin-bottom: 20px;
+}
