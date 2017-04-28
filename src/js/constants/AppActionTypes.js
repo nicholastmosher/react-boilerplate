@@ -1,3 +1,3 @@
 export default {
-  SAY_HELLO: 'SAY_HELLO',
+  SET_SAYING: 'SET_SAYING',
 };

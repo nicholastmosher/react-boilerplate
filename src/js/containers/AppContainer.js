@@ -1,21 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { sayHello } from '../actions/AppActions';
+import { Route, Redirect } from 'react-router-dom';
+import { setSaying } from '../actions/AppActions';
 
-const AppContainer = (props) => (
-  <div>
-    <h1>Hello, {props.name}!</h1>
-    <button onClick={() => props.greet('Bob')}>Bob</button>
-    <button onClick={() => props.greet('Ann')}>Ann</button>
-  </div>
+let GreetComponent = (props) => (
+  <h1>{props.saying}, {props.match.params.name}!</h1>
 );
 
 const mapStateToProps = (state) => ({
-  name: state.AppReducer.get('greetee'),
+  saying: state.AppReducer.get('greetOrBye'),
 });
 
+GreetComponent = connect(mapStateToProps)(GreetComponent);
+
+const AppContainer = (props) => (
+  <div>
+    <Redirect from="/" to="/John"/>
+    <Route path="/:name" component={GreetComponent}/>
+    <button onClick={() => props.say('Hello')}>Say Hello</button>
+    <button onClick={() => props.say('Goodbye')}>Say Goodbye</button>
+  </div>
+);
+
 const mapDispatchToProps = (dispatch) => ({
-  greet: (name) => dispatch(sayHello(name)),
+  say: (saying) => dispatch(setSaying(saying)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
