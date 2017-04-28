@@ -11,15 +11,25 @@ you get to know your way around.
 
 ## Feature Branches
 
-* react-base: A bare-minimum react project setup using webpack 2.
-* with-redux: Integrates redux configurations to the base project.
-* with-bootstrap: Integrates bootstrap (source) and required loaders (e.g. sass).
+* [react-base](https://github.com/nicholastmosher/react-boilerplate/tree/react-base):
+  A bare-minimum react project setup using webpack 2.
+* [with-redux](https://github.com/nicholastmosher/react-boilerplate/tree/with-redux):
+  Integrates redux configurations to the base project.
+* [with-router](https://github.com/nicholastmosher/react-boilerplate/tree/with-router):
+  Adds react-router (v4) using hash browser by default.
+* [with-router-redux](https://github.com/nicholastmosher/react-boilerplate/tree/with-router-redux):
+  Adds both redux and react-router integration. If using
+  both, use this branch only, don't also merge with-redux or with-router.
+* [with-sass](https://github.com/nicholastmosher/react-boilerplate/tree/with-sass):
+  Adds webpack loaders necessary for using sass.
+* [with-bootstrap](https://github.com/nicholastmosher/react-boilerplate/tree/with-bootstrap):
+  Integrates bootstrap js and sass.
 
 ## Sample Branches
 
 * react-base-sample: A small todo app built from the react-base template.
 * with-redux-sample: Todo app implemented using the with-redux setup.
-* with-bootstrap: An extension of react-base-sample with bootstrap styles.
+* More coming soon.
 
 # Getting started
 
@@ -34,9 +44,12 @@ git checkout -b myproject react-base
 
 Next, you'll need to choose which starter configurations you want to use and
 merge in the corresponding branches. For example, to get a starter with
-react, redux, and boostrap, run:
+react, redux, and bootstrap, run:
 
 ```bash
 git merge with-redux
 git merge with-bootstrap
 ```
+
+In some cases, the branches may not merge seamlessly. In those cases, keep both
+sets of code from the merging branches and resolve the conflict.
