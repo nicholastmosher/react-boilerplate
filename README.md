@@ -47,9 +47,32 @@ merge in the corresponding branches. For example, to get a starter with
 react, redux, and bootstrap, run:
 
 ```bash
-git merge with-redux
-git merge with-bootstrap
+git merge origin/with-redux
+git merge origin/with-bootstrap
 ```
 
 In some cases, the branches may not merge seamlessly. In those cases, keep both
 sets of code from the merging branches and resolve the conflict.
+
+After choosing the desired features, install all of the dependencies using npm:
+
+```bash
+npm install
+```
+
+After the dependencies are installed, you can launch the development server using
+
+```bash
+npm run dev
+```
+
+which will serve the site at `localhost:8080`, automatically refreshing when
+changes are made to the source.
+
+You can build the static files needed to publish the site using
+
+```bash
+npm run build
+```
+
+which will build the webpack bundle and place it in `public/bundle.js`.
